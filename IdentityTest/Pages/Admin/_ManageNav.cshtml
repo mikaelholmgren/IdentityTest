@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using IdentityTest.Data
+@inject SignInManager<AppUser> SignInManager
+@{
+}
+<ul class="nav nav-pills flex-column">
+    <li class="nav-item"><a class="nav-link " id="profile" asp-page="./Index">Admin</a></li>
+    @*<li class="nav-item"><a class="nav-link @ManageNavPages.EmailNavClass(ViewContext)" id="email" asp-page="./Email">E-post</a></li>*@
+    <li class="nav-item"><a class="nav-link" id="change-password" asp-page="./ChangePassword">Ändra lösenord</a></li>
+    <form id="logoutForm" class="" asp-page="/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+        <button id="logout" type="submit" class="btn btn-danger">Logga ut</button>
+    </form>
+</ul>
